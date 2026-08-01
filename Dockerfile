@@ -9,8 +9,8 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy application files
-COPY server.js ./
-COPY public/ ./public/
+COPY server.js index.html style.css app.js ./
+COPY assets/ ./assets/
 
 # Environment configuration
 ENV NODE_ENV=production

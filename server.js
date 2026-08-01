@@ -10,8 +10,8 @@ app.use((req, res, next) => {
     next();
 });
 
-// Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from root directory (GitHub Pages compatible)
+app.use(express.static(__dirname));
 
 // Health check endpoint for AWS ALB / App Runner / ECS
 app.get('/health', (req, res) => {
@@ -24,7 +24,7 @@ app.get('/health', (req, res) => {
 
 // Fallback to index.html for SPA-style routing if needed
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start Server
