@@ -1,0 +1,16 @@
+{
+  "name": "cute-cat-app",
+  "version": "1.0.0",
+  "description": "An interactive web app where a cute cat follows your clicks. Ready for AWS deployment via Docker.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kawaii Cat Follower - かわいい猫のおさんぽ</title>
+    <meta name="description" content="画面をクリックした場所に、かわいい猫ちゃんがとことこ駆け寄ってくるインタラクティブWebアプリ。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Decorator -->
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+
+    <!-- UI Overlay Header -->
+    <header class="app-header">
+        <div class="logo">
+            <span class="cat-icon">🐾</span>
+            <h1>Kawaii Cat Follower</h1>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-label">移動回数</span>
+                <span id="click-count" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">移動距離</span>
+                <span id="total-distance" class="stat-value">0 m</span>
+            </div>
+            <button id="sound-toggle" class="btn-icon" title="効果音切り替え">
+                <span id="sound-icon">🔊</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Interactive Canvas & Playground -->
+    <main id="playground" class="playground">
+        <div class="instruction-badge">
+            <span class="pulse-dot"></span>
+            画面の好きな場所をクリック・タップしてね！猫ちゃんが走っていくよ！
+        </div>
+
+        <!-- Dynamic Target Ripple Container -->
+        <div id="effects-container"></div>
+
+        <!-- The Cute Cat Character -->
+        <div id="cat-character" class="cat-character idle">
+            <img src="assets/cat.png" alt="Cute Cat" class="cat-img">
+            <div class="cat-shadow"></div>
+            <div class="cat-speech-bubble" id="cat-bubble">ニャ〜！</div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

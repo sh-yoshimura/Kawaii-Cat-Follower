@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cute-cat-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cute-cat-app-container
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
